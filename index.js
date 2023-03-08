@@ -34,4 +34,23 @@ function infCurry(a) {
 
 console.log(infCurry(10)(20)(30)(80)(56)(34)());
 
+//3
+
+function dom(id) {
+  return function (n) {
+    document.getElementById(id).innerText = "Hello " + n;
+  };
+}
+
+const d = dom("curry");
+d("saravana");
+
 ////////////////////////////PARTIAL APPLICATION OF FUNCTIONS////////////////////////////////////
+
+function pa(a) {
+  return function (b, c) {
+    return a + b + c;
+  };
+}
+
+console.log(pa(100)(1, 4));
